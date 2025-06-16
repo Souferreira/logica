@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
+    <title>Programação Orientada a Objetos (POO) em JavaScript</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow p-4">
+                    <header class="card shadow p-4 text-center">
+                        <h1 class="text-primary">11. Programação Orientada a Objetos (POO) em JavaScript</h1>
+            </header>
+            <hr>
+
+            <!-- Introdução -->
+            <p>A Programação Orientada a Objetos (POO) é um paradigma de programação que organiza o código em torno de objetos. O JavaScript suporta POO com o uso de objetos, classes, herança e polimorfismo. </p>
+            <hr>
+            <h4>📌 1. Objetos e Propriedades</h4>
+           <p>Um objeto é uma coleção de pares chave-valor que representam uma entidade do mundo real.</p>
+           <h5>🔹 Criando uma Classe</h5>
+            <pre class="bg-light p-3 rounded">
+                <div class="bg-light p-3 rounded ">
+                    // Criando um objeto chamado "pessoa"
+                    let pessoa = {
+                        nome: "Carlos",
+                        idade: 33,
+                        profissao: "Desenvolvedor",
+                        saudacao: function() {
+                            console.log("Olá, meu nome é " + this.nome);
+                        }
+                    };
+                    
+                    // Acessando propriedades do objeto
+                    console.log(pessoa.nome); // Carlos
+                    console.log(pessoa.idade); // 33
+                    pessoa.saudacao(); // Olá, meu nome é Carlos
+                    
+                </div>
+            </pre>
+            <!-- Explicação -->
+            <h3>📌 Como funciona?</h3>
+            <ul>
+                <li>Criamos um objeto pessoa <b>propriedades (nome, idade, profissao)</b></li>
+                <li>Criamos um  <b> método</b> (saudacao) que usa this para acessar a propriedade nome</li>
+                <li>Podemos acessar valores usando  <b> pessoa.nome</b></li>
+
+               
+            </ul>
+
+            <hr>
+
+            <h4>📌 2. Classes e Métodos (class, constructor, this)</h4>
+            <p>No ES6, podemos criar classes para definir um modelo de um objeto.</p>
+            <h5>🔹 Criando uma Classe</h5>
+             <pre class="bg-light p-3 rounded">
+                 <div class="bg-light p-3 rounded ">
+                     // Criando uma classe chamada "Pessoa"
+                     class Pessoa {
+                        constructor(nome, idade) {
+                            this.nome = nome;
+                            this.idade = idade;
+                        }
+                    
+                        apresentar() {
+                            console.log(`Olá, meu nome é ${this.nome} e tenho ${this.idade} anos.`);
+                        }
+                    }
+                    
+                    // Criando uma instância (objeto)
+                    let pessoa1 = new Pessoa("Ana", 28);
+                    pessoa1.apresentar(); // Olá, meu nome é Ana e tenho 28 anos.
+                     
+                 </div>
+             </pre>
+             <!-- Explicação -->
+             <h3>📌 Como funciona?</h3>
+             <ul>
+                 <li><b>constructor()</b> define os atributos da classe.</li>
+                 <li><b>This </b>faz referência à instância criada.</li>
+                 <li><b>new Pessoa("Ana", 28)</b> cria um objeto baseado na classe.</li>
+ 
+                
+             </ul>
+            
+            <h4>📌 3. Herança e Polimorfismo</h4>
+            <p>A herança permite criar uma classe que herda características de outra.</p>
+            <h5>🔹 Exemplo de Herança</h5>
+            <pre class="bg-light p-3 rounded">
+                <code>
+            class Animal {
+                constructor(nome) {
+                    this.nome = nome;
+                }
+
+                fazerSom() {
+                    console.log("Som genérico de animal");
+                }
+            }
+
+            // A classe Cachorro herda de Animal
+            class Cachorro extends Animal {
+                fazerSom() {
+                    console.log("Au Au!"); // Sobrescrevendo o método
+                }
+            }
+
+            let dog = new Cachorro("Rex");
+            dog.fazerSom(); // Au Au!
+                </code>
+            </pre>
+
+            <h3>📌 Como funciona?</h3>
+            <ul>
+                <li><b>extends</b> permite que <b>Cachorro</b> herde de <b>Animal</b>.</li>
+                <li><b>fazerSom()</b> foi sobrescrito na classe <b>Cachorro</b>.</li>
+            </ul>
+
+            <hr>
+
+            <h5>📝 Exercício Prático</h5>
+            <p>✅ Crie uma classe <b>Veiculo</b> com marca e modelo.</p>
+            <p>✅ Crie uma classe <b>Moto</b> que herda <b>Veiculo</b> e sobrescreva um método <b>acelerar()</b>.</p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExHeranca" aria-expanded="false" aria-controls="collapseExHeranca">Mostrar Resposta</button>
+            <div class="collapse" id="collapseExHeranca">
+                <div class="card card-body">
+                    <pre class="bg-light p-3 rounded">
+                <code>
+            class Veiculo {
+                constructor(marca, modelo) {
+                    this.marca = marca;
+                    this.modelo = modelo;
+                }
+
+                acelerar() {
+                    console.log("O veículo está acelerando...");
+                }
+            }
+
+            class Moto extends Veiculo {
+                acelerar() {
+                    console.log("A moto está acelerando rapidamente!");
+                }
+            }
+
+            let minhaMoto = new Moto("Honda", "CB500");
+            minhaMoto.acelerar(); // A moto está acelerando rapidamente!
+                </code>
+                    </pre>
+                </div>
+            </div>
+    
+            <hr>
+            <!-- Navegação -->
+            
+            <div class="navigation d-flex justify-content-between">
+                <button class="btn btn-primary">
+                    <a href="10_eventos_e_formularios_no_javaScript .html" class="text-white text-decoration-none">Voltar</a>
+                </button>
+                <button class="btn btn-primary">
+                    <a href="12_ assincronismo.html" class="text-white text-decoration-none">Próximo módulo 11</a>
+                </button>
+        </div>
+    </div>
+</body>
+</html>
+    
+

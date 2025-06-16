@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
+    <title> Trabalhando com Assincronismo (Avançado)</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow p-4">
+                    <header class="card shadow p-4 text-center">
+                        <h1 class="text-primary">12.Trabalhando com Assincronismo (Avançado)</h1>
+            </header>
+            <hr>
+
+            <!-- Introdução -->
+            <p>A Programação Orientada a Objetos (POO) é um paradigma de programação que organiza o código em torno de objetos. O JavaScript suporta POO com o uso de objetos, classes, herança e polimorfismo. </p>
+            <hr>
+            <h4>📌 1. Callbacks e Promises</h4>
+            <h5>🔹 Callback: Função como Parâmetro</h5>
+            <pre class="bg-light p-3 rounded">
+                <code>
+function buscarDados(callback) {
+    setTimeout(() => {
+        callback("Dados carregados!");
+    }, 2000);
+}
+
+buscarDados((mensagem) => {
+    console.log(mensagem);
+});
+                </code>
+            </pre>
+            <p>➡️ Problema: Callbacks podem gerar o callback hell, dificultando a leitura do código.</p>
+
+            <h5>🔹 Usando Promises</h5>
+            <pre class="bg-light p-3 rounded">
+                <code>
+function buscarDados() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Dados carregados!");
+        }, 2000);
+    });
+}
+
+buscarDados().then((mensagem) => {
+    console.log(mensagem);
+});
+                </code>
+            </pre>
+            <p>➡️ Solução: <code>then()</code> executa quando a Promise é resolvida.</p>
+
+            <h5>📝 Exercício Prático</h5>
+            <p>✅ Crie uma função que retorna uma Promise e exibe "Operação concluída!" após 3 segundos.</p>
+
+            <hr>
+
+            <h4>📌 2. async e await</h4>
+            <p><code>async</code> transforma uma função em assíncrona, e <code>await</code> pausa a execução até a Promise ser resolvida.</p>
+
+            <h5>🔹 Exemplo com async/await</h5>
+            <pre class="bg-light p-3 rounded">
+                <code>
+function carregarDados() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Dados carregados!");
+        }, 2000);
+    });
+}
+
+async function exibirDados() {
+    let dados = await carregarDados();
+    console.log(dados);
+}
+
+exibirDados(); // "Dados carregados!" após 2 segundos
+                </code>
+            </pre>
+            <h5>📌 Como funciona?</h5>
+            <ul>
+                <li><code>await carregarDados();</code> espera a Promise ser resolvida antes de continuar.</li>
+            </ul>
+
+            <h5>📝 Exercício Prático</h5>
+            <p>✅ Crie uma função <code>obterNumeroAleatorio()</code> que retorna um número após 2 segundos usando <code>async/await</code>.</p>
+
+            <hr>
+
+            <h4>📌 3. Fetch API (Consumindo APIs externas)</h4>
+            <p><code>fetch()</code> permite fazer requisições HTTP para buscar dados de uma API.</p>
+
+            <h5>🔹 Consumindo uma API Externa</h5>
+            <pre class="bg-light p-3 rounded">
+                <code>
+async function buscarUsuario() {
+    let resposta = await fetch("https://jsonplaceholder.typicode.com/users/1");
+    let usuario = await resposta.json();
+    console.log(usuario);
+}
+
+buscarUsuario();
+                </code>
+            </pre>
+            <h5>📌 Como funciona?</h5>
+            <ul>
+                <li><code>fetch("URL")</code> faz uma requisição para a API.</li>
+                <li><code>resposta.json()</code> converte a resposta em JSON.</li>
+            </ul>
+
+            <h5>📝 Exercício Prático</h5>
+            <p>✅ Crie uma função <code>buscarPosts()</code> que consome a API "https://jsonplaceholder.typicode.com/posts" e exibe os títulos dos posts.</p>
+    
+            <hr>
+            <!-- Navegação -->
+            
+            <div class="navigation d-flex justify-content-between">
+                <button class="btn btn-primary">
+                    <a href="11_ poo_js .html" class="text-white text-decoration-none">Voltar</a>
+                </button>
+                <button class="btn btn-primary">
+                    <a href="0_index .html" class="text-white text-decoration-none">Volta inicio</a>
+                </button>
+        </div>
+    </div>
+</body>
+</html>
+    
+

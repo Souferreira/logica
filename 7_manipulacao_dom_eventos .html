@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset ="UTF-8">
+        <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+      <script src="js/bootstrap.min.js"></script>
+        <title>Manipulação do DOM e Eventos</title>
+        </head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow p-4">
+            <header class="card shadow p-4 text-center">
+                <h1 class="text-primary">7. Manipulação do DOM e Eventos</h1>
+            </header>
+
+            <hr>
+
+            <h2>O que é o DOM?</h2>
+
+            <p>O <b>DOM (Document Object Model)</b> é a estrutura do seu site representada como um objeto JavaScript. Ele permite que você manipule elementos HTML usando JavaScript.</p>
+
+            <h2> Exemplo:</h2>
+
+            <pre class="bg-light p-3 rounded">       
+                Quando você acessa <code>document.body</code>, você está pegando a 
+                <code>&lt;body&gt;</code> da página e 
+                pode modificar seu conteúdo, cor, adicionar elementos, etc.
+            </pre>
+
+            <hr>
+
+            <h2>Como manipular o DOM?</h2>
+            <ul>
+                <li>Usamos métodos do <b>document</b> para <b>selecionar e modificar</b> elementos.</li>
+            </ul>
+
+            <h6>🔵 Selecionar elementos:</h6>
+
+            <p>Você pode usar diferentes métodos para acessar os elementos HTML:</p>
+            <pre class="bg-light p-3 rounded">
+                // Seleciona um elemento pelo ID
+                let titulo = document.getElementById("meuTitulo");
+
+                // Seleciona pelo nome da tag
+                let paragrafos = document.getElementsByTagName("p");
+
+                // Seleciona pelo nome da classe
+                let itens = document.getElementsByClassName("lista-item");
+
+                // Seleciona usando um seletor CSS (pode ser ID, classe, tag)
+                let botao = document.querySelector("#meuBotao");
+                let todosOsParagrafos = document.querySelectorAll("p");
+            </pre>
+
+            <h6>🔵 Modificar elementos:</h6>
+            <pre class="bg-light p-3 rounded">
+                let titulo = document.getElementById("meuTitulo");
+
+                // Modificar texto
+                titulo.innerText = "Novo Título";
+
+                // Modificar HTML interno
+                titulo.innerHTML = "Texto em itálico";
+
+                // Modificar estilo
+                titulo.style.color = "blue";
+                titulo.style.fontSize = "24px";
+            </pre>
+
+            <h4>🔴 Eventos no JavaScript</h4>
+            <p>Eventos permitem que algo aconteça quando o usuário clica, passa o mouse, digita, etc.</p>
+
+            <h6>🔵 Capturar eventos com <b>(addEventListener):</b> </h6>
+            <pre class="bg-light p-3 rounded">
+                let botao = document.getElementById("meuBotao");
+
+                botao.addEventListener("click", function() {
+                    alert("Botão clicado!");
+                });
+            </pre>
+
+            <h2>Outros tipos de eventos</h2>
+            <pre class="bg-light p-3 rounded">
+                <ul>
+                    <li>click → Quando o usuário clica</li>
+                    <li>mouseover → Quando o usuário passa o mouse</li>
+                    <li>keydown → Quando o usuário pressiona uma tecla</li>
+                    <li>change → Quando um valor de <code>&lt;input&gt;</code> muda</li>
+                </ul>
+            </pre>
+            <pre class="bg-light p-3 rounded">
+                let input = document.getElementById("meuInput");
+
+                input.addEventListener("change", function() {
+                    console.log("O usuário digitou: " + input.value);
+                });
+            </pre>
+
+            <h2>🎯 Exercício Prático</h2>
+            <p>Agora, tente resolver este desafio!</p>
+            <p><strong>📌 Tarefa:</strong></p>
+
+            <h6> Crie um HTML no seu Editor de códigos:</h6>
+
+            <ul>
+                <li>✅ Um botão que muda o texto quando clicado</li>
+                <li>✅ Um campo de entrada que exibe um alerta ao digitar</li>
+            </ul>
+
+            <hr>
+
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample1" aria-expanded="false" aria-controls="collapseWidthExample">Mostrar Resposta</button>
+            <div style="min-height:15px">
+                <div class="collapse collapse-vertical" id="collapseWidthExample1">
+                    <div class="card card-body" style="width: 650px;">
+                        <pre class="bg-light p-4 rounded">
+                            <div class="mb-3">
+                                <input id="meuInput" class="form-control" type="text" placeholder="Digite algo aqui">
+                            <div class="mb-2 d-flex align-items-center justify-content-between">
+                                <button id="meuBotao" class="btn btn-success ">Clique aqui</button>
+                                <p id="textoBotao" class="card shadow p-2 text-center  mb-0">Texto original</p>
+                            </div>
+                        </pre>
+
+                        <script>
+                            // Botão que muda o texto quando clicado
+                            let botao = document.getElementById("meuBotao");
+                            let textoBotao = document.getElementById("textoBotao");
+
+                            botao.addEventListener("click", function() {
+                                textoBotao.innerText = "O texto foi alterado!";
+                            });
+
+                            // Campo de entrada que exibe um alerta ao digitar
+                            let input = document.getElementById("meuInput");
+
+                            input.addEventListener("change", function() {
+                                alert("Você digitou: " + input.value);
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="navigation d-flex justify-content-between">
+                <button class="btn btn-primary">
+                    <a href="6_funcoes_escopo.html" class="text-white text-decoration-none">Voltar</a>
+                </button>
+                <button class="btn btn-primary">
+                    <a href="8_selecao_de_elementos_dom.html" class="text-white text-decoration-none">Próximo módulo 7</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>

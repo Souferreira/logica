@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+      <script src="js/bootstrap.min.js"></script>
+    <title>Estruturas de Repetição (Loops)</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow p-4">
+          <header class="card shadow p-4 text-center">
+        <h1 class="text-primary">5. Estruturas de Repetição (Loops)</h1>
+          </header>
+          <hr>
+          
+        <p>Os loops são usados para repetir um bloco de código várias vezes, economizando esforço e tornando o código mais eficiente.</p>
+
+        <h2>For - Repetição com contador</h2>
+        <p>Usado quando sabemos quantas vezes queremos repetir algo.</p>
+        <pre class="bg-light p-3 rounded">
+            for (let i = 1; i <= 5; i++) {
+                console.log("Número: " + i);
+            }
+        </pre>
+
+        <hr>
+
+        <h4>🔹 Explicação:</h4>
+        <pre class="bg-light p-4 rounded">
+        <ul>
+            <li>Começa com <code>i = 1</code>.</li>
+            <li>Continua enquanto <code>i <= 5</code>.</li>
+            <li>A cada repetição, <code>i++</code> aumenta 1.</li>
+        </ul>
+        </pre>
+        
+        <p>📌 Saída no console:</p>
+        <pre class="bg-light p-4 rounded">
+
+            Número: 1
+            Número: 2
+            Número: 3
+            Número: 4
+            Número: 5
+        </pre>
+
+        <hr>
+
+        <h2>while - Repetição até uma condição ser falsa</h2>
+        <p>Usado quando não sabemos o número exato de repetições.</p>
+      
+            <pre class="bg-light p-4 rounded">
+
+                let contador = 1;
+                while (contador <= 5) {
+                    console.log("Contador: " + contador);
+                    contador++; // Aumenta o valor
+                }
+            </pre>
+            <hr>
+        <h4>🔹 Explicação:</h4>
+        <ul>
+            <li>Continua executando enquanto <code>contador <= 5</code>.</li>
+        </ul>
+        <p>📌 Saída no console:</p>
+        <pre class="bg-light  rounded">
+
+                Contador: 1
+                Contador: 2
+                Contador: 3
+                Contador: 4
+                Contador: 5
+            </pre>
+
+            <h4>do...while - Garante que executa pelo menos uma vez</h4>
+        <p>Mesmo que a condição seja falsa, o código roda pelo menos uma vez.</p>
+    <pre class="bg-light  rounded">
+
+        let num = 6;
+        do {
+            console.log("Executando...");
+            num++;
+        } while (num <= 5);
+
+    </pre>
+        <p>📌 Saída no console:</p>
+        <pre class="bg-light  rounded">
+            
+            Executando...
+        </pre>
+
+        <hr>
+
+        <p>💡 Mesmo que <code>num</code> já seja 6, o código roda uma vez antes de verificar a condição!</p>
+         
+        <hr>
+
+        <h2>Exercício: Estruturas de Repetição (Loops)</h2>
+        <p><strong>Tarefa:</strong></p>
+        <ul>
+            <li>Crie um <code>for</code> que exiba os números de 1 a 10 no <code>console.log()</code>.</li>
+            <li>Crie um <code>while</code> que exiba os números de 10 a 1 no <code>console.log()</code>.</li>
+            <li>Crie um <code>do...while</code> que exiba os números de 1 a 5, mesmo se a variável inicial for maior que 5.</li>
+        </ul>
+
+        
+             <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample1" aria-expanded="false" aria-controls="collapseWidthExample">Mostrar Resposta
+        </button>
+       <div style="min-height:15px">
+        <div class="collapse collapse-vertical" id="collapseWidthExample1">
+          <div class="card card-body" style="width: 650px;">
+          <pre class="bg-light p-3 rounded">
+   
+    // 1️⃣ for - Exibir números de 1 a 10
+    for (let i = 1; i <= 10; i++) {
+        console.log(i);
+    }
+    // 📌 Saída no console:
+    // 1
+    // 2
+    // 3
+    // 4
+    // 5
+    // 6
+    // 7
+    // 8
+    // 9
+    // 10
+</pre>
+    <pre class="bg-light p-3 rounded">
+   
+    // 2️⃣ while - Exibir números de 10 a 1
+    let num = 10;
+    while (num >= 1) {
+        console.log(num);
+        num--; // Decrementa o número
+    }
+    // 📌 Saída no console:
+    // 10
+    // 9
+    // 8
+    // 7
+    // 6
+    // 5
+    // 4
+    // 3
+    // 2
+    // 1
+    </pre>
+
+    <pre class="bg-light p-3 rounded">
+
+    // 3️⃣ do...while - Exibir números de 1 a 5, mesmo se a variável inicial for maior que 5
+    
+    let num2 = 6; // Começando com um valor maior que 5
+    do {
+        console.log(num2);
+        num2++;
+    } while (num2 <= 5);
+
+    // 📌 Saída no console:
+    // 6
+    // 💡 Explicação:
+    // Mesmo que num2 = 6 já seja maior que 5, o do...while executa pelo menos uma vez antes de verificar a condição.
+    
+            </pre>
+
+        </div>
+        </div>
+<hr>
+
+       
+
+        
+      <div class="navigation d-flex justify-content-between">
+        <button class="btn btn-primary">
+            <a href="4_variaveis_dado_op_matematico..html" class="text-white text-decoration-none">Voltar</a>
+            </button>
+        <button class="btn btn-primary">
+        <a href="6_funcoes_escopo.html" class="text-white text-decoration-none">Proximo modulo 6</a>
+    </div>
+ </div>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset ="UTF-8">
+        <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+       <link href="css/main.css" rel="stylesheet">
+      <script src="js/bootstrap.min.js"></script>
+        <title>Funções e escopo</title>
+        </head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow p-4">
+          <header class="card shadow p-4 text-center">
+        <h1 class="text-primary">6. Funções e Escopo (Local vs Global)</h1>
+          </header>
+          <hr>
+        <p>As funções são blocos de código reutilizáveis que podem ser chamados sempre que necessário.</p>
+
+        <h2>Exemplo básico de função</h2>
+        <pre class="bg-light p-3 rounded">
+            function saudacao(nome) {
+                console.log("Olá, " + nome + "!");
+            }
+            saudacao("Carlos"); // Exibe: Olá, Carlos!
+        </pre>
+        <p><strong>Explicação:</strong></p>
+        <ul>
+            <li>Criamos a função <code>saudacao(nome)</code>, que recebe um parâmetro <code>nome</code>.</li>
+            <li>Quando chamamos <code>saudacao("Carlos")</code>, ele substitui <code>nome</code> por "Carlos".</li>
+        </ul>
+
+        <h2>Escopo (Local vs Global)</h2>
+        <p>O escopo define onde uma variável pode ser acessada no código.</p>
+
+        <h4>🔵 Escopo Global (Pode ser acessado de qualquer lugar):</h4>
+        <pre class="bg-light p-3 rounded">
+            let nome = "Ana"; // Variável global
+            function mostrarNome() {
+                console.log(nome);
+            }
+            mostrarNome(); // Exibe: Ana
+        </pre>
+        </pre>
+
+        <h4>🔴 Escopo Local (Só pode ser acessado dentro da função):</h4>
+       <pre class="bg-light p-3 rounded">
+        function teste() {
+            let mensagem = "Olá!";
+            console.log(mensagem);
+        }
+        teste(); // Exibe: Olá!
+        console.log(mensagem); // Erro! (mensagem não existe aqui)
+    </pre>
+    </pre>
+        <p><strong>💡 Regra importante:</strong></p>
+        <ul>
+            <li>Variáveis dentro de funções são locais e só podem ser acessadas dentro delas.</li>
+            <li>Variáveis globais podem ser acessadas de qualquer lugar.</li>
+        </ul>
+    
+        <hr>
+
+        <h2>🎯 Exercício Final</h2>
+        <p>Agora, tente resolver este desafio!</p>
+        <p><strong>📌 Tarefa:</strong></p>
+        <p>Crie uma função chamada <code>multiplicaPorDois</code> que receba um número como parâmetro e retorne esse número multiplicado por 2.</p>
+        <p>Chame essa função passando um número qualquer e exiba o resultado no <code>console.log()</code>.</p>
+
+        
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample1" aria-expanded="false" aria-controls="collapseWidthExample">Mostrar Resposta
+   </button>
+  <div style="min-height:15px">
+   <div class="collapse collapse-vertical" id="collapseWidthExample1">
+     <div class="card card-body" style="width: 650px;">
+     <pre class="bg-light p-3 rounded">
+        
+        function multiplicaPorDois (numero) {
+            return numero * 2;
+        }
+        console.log (multiplicaPorDois(5)); // Exibe: 10
+                  
+        </pre>
+     </div>
+     </div>
+
+     <hr>
+     
+         
+      <div class="navigation d-flex justify-content-between">
+        <button class="btn btn-primary">
+            <a href="5_estrutura_de_repeticacao.html" class="text-white text-decoration-none">Voltar</a>
+            </button>
+        <button class="btn btn-primary">
+        <a href="7_manipulacao_dom_eventos .html" class="text-white text-decoration-none">Proximo modulo 7</a>
+    </div>
+ </div>
+</body>
+</html>

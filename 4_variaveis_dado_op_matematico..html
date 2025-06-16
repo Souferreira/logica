@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+      <script src="js/bootstrap.min.js"></script>
+    <title>Variáveis, Tipos de Dados e operadores matematico</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="card shadow p-4">
+        <header class="card shadow p-4 text-center">
+        <h1 class="text-primary">4. Variáveis e Tipos de Dados</h1>
+        </header>
+
+        <hr>
+
+        <p>Uma variável é um espaço na memória onde guardamos um valor. 
+        Em JavaScript, usamos <code>let</code>, <code>const</code> ou <code>var</code> para declarar variáveis.</p>
+
+        <pre class="bg-light p-3 rounded">
+        let nome = "Carlos"; // String (texto)
+        let idade = 33; // Number (número)
+        let aprovado = true; // Boolean (verdadeiro ou falso)
+        var cor = "azul"; // String (texto)
+        const PI = 3.14; // Number (número)
+        </pre>
+
+        <hr>
+
+        <h2 class="text-success">2. Operadores Matemáticos</h2>
+        <p>Podemos usar operadores para realizar cálculos</p>
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead class="thead-dark">
+              <tr>
+                <th>Operador</th>
+                <th>Descrição</th>
+                <th>Exemplo</th>
+                <th>Resultado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>+</td>
+                <td>Adição</td>
+                <td>5 + 3</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td>-</td>
+                <td>Subtração</td>
+                <td>10 - 2</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td>*</td>
+                <td>Multiplicação</td>
+                <td>4 * 3</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>/</td>
+                <td>Divisão</td>
+                <td>12 / 3</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>%</td>
+                <td>Resto da divisão</td>
+                <td>10 % 3</td>
+                <td>1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+        <pre class="bg-light p-3 rounded">
+        let a = 10;
+        let b = 5;
+
+        console.log(a + b); // Soma
+        console.log(a - b); // Subtração
+        console.log(a * b); // Multiplicação
+        console.log(a / b); // Divisão
+        console.log(a % b); // Resto da divisão
+        </pre>
+
+      
+
+          <h3>Exercício 1: Criando Variáveis e Operações</h3>
+          <p><strong>📌 Tarefa:</strong></p>
+          <p>1. Crie uma variável <code>meuNome</code> e guarde seu nome nela.</p>
+          <p>2. Crie uma variável <code>minhaIdade</code> e guarde sua idade.</p>
+          <p>3. Some 10 anos à sua idade e mostre no <code>console.log</code>.</p>
+          <p>4. Multiplique sua idade por 2 e mostre no <code>console.log</code>.</p>
+          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">Mostrar Resposta
+          </button>
+              <div style="min-height:10px">
+          <div class="collapse" id="collapseWidthExample">
+            <div class="card card-body" style="width: 650px;">
+            <pre class="bg-light p-3 rounded">
+          <h6> 
+            let meuNome = "Emanuel";
+
+            let minhaIdade = 25;
+
+            let novaIdade = minhaIdade + 10;
+
+            let novaIdade2 = minhaIdade * 2;
+
+            console.log(novaIdade);
+
+            console.log(novaIdade2);</h6>
+        
+            </pre>
+          </div>
+          </div>
+          </div>
+          
+          
+          <hr>
+
+          
+
+          <h3>Exercício 2: Criando Variáveis e Operações</h3>
+          <p><strong>📌 Tarefa:</strong></p>
+          <p>1. Crie uma variável com <code>let</code> chamada <code>cidade</code> e atribua o nome da cidade onde mora.</p>
+          <p>2. Crie uma variável com <code>const</code> chamada <code>pais</code> e atribua o nome do país onde mora.</p>
+          <p>3. Tente mudar o valor da variável <code>cidade</code> e exibir no <code>console.log()</code>.</p>
+          <p>4. Tente mudar o valor da variável <code>pais</code> e veja o que acontece.</p>
+          
+          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample1" aria-expanded="false" aria-controls="collapseWidthExample">Mostrar Resposta
+          </button>
+        <div style="min-height:15px">
+          <div class="collapse collapse-vertical" id="collapseWidthExample1">
+            <div class="card card-body" style="width: 650px;">
+            <pre class="bg-light p-3 rounded">
+            <h6>
+            let cidade = "São Paulo";
+
+            const pais = "Brasil";
+
+            cidade = "Rio de Janeiro";
+
+            console.log(cidade);
+
+            pais = "Argentina"; // não pode mudar o valor de uma constante
+
+            console.log(pais); // não pode mudar o valor de uma constante</h6>
+            </pre>
+          </div>
+          </div>``
+
+
+        <hr>
+        <h3 class="text-warning">Resumo</h3>
+        <p>Você já entendeu os conceitos básicos sobre <code>let</code>, <code>const</code>, 
+        <code>var</code> e como usar <code>console.log()</code> para exibir resultados. 
+        Aqui estão os pontos principais que você aprendeu:</p>
+
+        <h4>Variáveis:</h4>
+        <ul>
+          <li><strong>let:</strong> Usado para criar variáveis que podem ter seus valores alterados.</li>
+          <li><strong>const:</strong> Usado para criar variáveis cujo valor não pode ser alterado depois de atribuído.</li>
+          <li><strong>var:</strong> Um jeito mais antigo de criar variáveis, mas não recomendado por questões de escopo (pode ser substituído por <code>let</code> ou <code>const</code>).</li>
+        </ul>
+
+        <h4>Exibindo no console:</h4>
+        <p>Você usa <code>console.log()</code> para exibir o valor das variáveis e conferir o que está acontecendo no seu código.</p>
+      </div>
+
+      <hr>
+      
+
+      <div class="navigation d-flex justify-content-between">
+        <button class="btn btn-primary">
+            <a href="3_estrutura_condicionais_em_javaScript.html" class="text-white text-decoration-none">Voltar</a>
+            </button>
+        <button class="btn btn-primary">
+        <a href="5_estrutura_de_repeticacao.html" class="text-white text-decoration-none">Proximo modulo 5</a>
+    </div>
+ </div>
+  </body>
+</html>
+
+  

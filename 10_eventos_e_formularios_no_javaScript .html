@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
+    <title>Seleção de Elementos no DOM</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow p-4">
+                    <header class="card shadow p-4 text-center">
+                        <h1 class="text-primary">10. Eventos e Formulários no JavaScript</h1>
+            </header>
+            <hr>
+
+            <!-- Introdução -->
+            <p>Eventos são ações que ocorrem na página, como cliques, movimento do mouse e pressionamento de teclas. JavaScript permite capturar esses eventos e executar funções em resposta.</p>
+            <hr>
+            <h4>🔹 1. Eventos no JavaScript</h4>
+           <p>Eventos permitem que o código reaja a interações do usuário. Os mais comuns são:</p>
+            <table class="table table-bordered mt-4">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Evento</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>click</code></td>
+                        <td>Acionado quando um elemento é clicado.</td>
+                    </tr>
+                    <tr>
+                        <td><code>mouseover</code></td>
+                        <td>Disparado quando o mouse passa sobre um elemento.</td>
+                    </tr>
+                    <tr>
+                        <td><code>mouseout</code></td>
+                        <td>Quando o mouse sai do elemento.</td>
+                    </tr>
+                    <tr>
+                        <td><code>keydown</code></td>
+                        <td>Quando uma tecla é pressionada.</td>
+                    </tr>
+                    <tr>
+                        <td><code>keyup</code></td>
+                        <td>Quando uma tecla é solta.</td>
+                    </tr>
+                    <tr>
+                        <td><code>submit</code></td>
+                        <td>Disparado quando um formulário é enviado.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Exemplo Prático: Alterando o Texto de um Parágrafo -->
+            <h5>🔹 Exemplo Prático: Evento <b>"click"</b></h5>
+            <div class="bg-light p-3 rounded text-center">
+
+                    <button id="meuBotao">Clique Aqui</button>
+                    <p id="mensagem"></p>
+                
+                    <script>
+                        document.getElementById("meuBotao").addEventListener("click", function() {
+                            document.getElementById("mensagem").innerText = "Você clicou no botão!";
+                        });
+                    </script>
+            </div>
+            <hr>
+
+            <pre class="bg-light p-3 rounded">
+                <div class="bg-light p-3 rounded ">
+  &lt;button id="meuBotao"&gt;Clique Aqui&lt;/button&gt;
+   &lt;p id="mensagem"&gt;&lt;/p&gt;
+&lt;script&gt;
+document.getElementById("meuBotao").addEventListener("click", function() {
+    document.getElementById("mensagem").innerText = "Você clicou no botão!";
+});
+&lt;/script&gt;
+                </div>
+            </pre>
+            <!-- Explicação -->
+            <h3>📌 Como funciona?</h3>
+            <ul>
+                <li>O <b>codeaddEventListener("click", function() {...});</b> adiciona um evento ao botão.</li>
+                <li>Quando o botão for clicado, a função altera o texto do <b> &lt;p&gt;</b> para <b>"Você clicou no botão!"</b>.</li>
+               
+            </ul>
+
+            <hr>
+
+            <h5>🔹 Exemplo Prático: Evento <b>mouseover</b></h5>
+            <pre class="bg-light p-3 rounded">
+    <p id="texto">Passe o mouse aqui!</p>
+</pre>
+    <script>
+        let paragrafo = document.getElementById("texto");
+    
+        paragrafo.addEventListener("mouseover", function() {
+            paragrafo.style.color = "blue";
+            paragrafo.innerText = "Você passou o mouse!";
+        });
+
+        paragrafo.addEventListener("mouseout", function() {
+            paragrafo.style.color = "black";
+            paragrafo.innerText = "Passe o mouse aqui!";
+        });
+    </script>
+            </pre>
+            <pre class="bg-light p-3 rounded">
+&lt;pre class=&quot;bg-light p-3 rounded&quot;&gt;
+    &lt;p id=&quot;texto&quot;&gt;Passe o mouse aqui!&lt;/p&gt;
+   
+    &lt;script&gt;
+            let paragrafo = document.getElementById(&quot;texto&quot;);
+            paragrafo.addEventListener(&quot;mouseover&quot;, function() {
+                paragrafo.style.color = &quot;blue&quot;;
+                 paragrafo.innerText = &quot;Você passou o mouse!&quot;;
+                        });
+                paragrafo.addEventListener(&quot;mouseout&quot;, function() {
+                  paragrafo.style.color = &quot;black&quot;;
+                    paragrafo.innerText = &quot;Passe o mouse aqui!&quot;;
+                        });
+                &lt;script&gt;
+            </pre>
+
+            <h3>📌 Como funciona?</h3>
+            <ul>
+                <li>Quando o mouse passa sobre o &lt;p&gt;, a cor do texto muda e o conteúdo é atualizado.</li>
+                <li>Quando o mouse sai, o texto e a cor voltam ao normal.</li>
+            </ul>
+          <hr>
+            <h5>🔹  Exemplo Prático: Evento <b>keydown</b> (Tecla pressionada)</b></h5>
+            <div class="bg-light p-3 rounded text-center">
+                <input type="text" id="campoTexto" placeholder="Digite algo...">
+                 <p id="saida"></p>
+                  <script>
+        document.getElementById("campoTexto").addEventListener("keydown", function(event) {
+            document.getElementById("saida").innerText = "Você pressionou: " + event.key;
+        });
+    </script>
+            </div>
+<hr>
+
+            <pre class="bg-light p-3 rounded">
+&lt;style&gt;
+    .novoEstilo {
+        background-color: blue;
+        color: white;
+        padding: 20px;
+    }
+&lt;/style&gt;
+
+&lt;h1 id="meuTitulo"&gt;Mudar a cor&lt;/h1&gt;
+&lt;button onclick="mudarEstilo()"&gt;Mudar Estilo&lt;/button&gt;
+
+&lt;script&gt;
+    function mudarEstilo() {
+        let titulo = document.getElementById("meuTitulo");
+        titulo.classList.toggle("novoEstilo");
+    }
+&lt;/script&gt;
+            </pre>
+
+          
+            <h4>📌 Como funciona?</h3>
+            <ul>
+                <li>Quando uma tecla é pressionada no campo <b>&lt;input&gt;</b>, o evento <b>&lt;keydown&gt;</b>.</li>
+                <li> texto do &lt;p&gt; exibe a tecla pressionada..</li>
+            </ul>
+
+            <hr>
+
+        <h4>🔹 2. Manipulação de Formulários e Validação</h4>
+            Pegando Valores de Campos de Formulário
+           <p>Para obter valores de um formulário, usamos o método  <code>.value</code>.</p>
+            
+          
+            <hr>
+            <!-- Validação de Formulários -->
+
+            <h5>🔹 Exemplo Prático: Validação Simples</h5>
+            <p>Podemos verificar se o usuário preencheu os campos corretamente antes de enviar um formulário.</p>
+           
+            <div class="bg-light p-3 rounded">
+    
+                <form onsubmit="return validarFormulario()">
+                    <input type="text" id="nome" class="form-control mb-2" placeholder="Digite seu nome">
+                    <input type="email" id="email" class="form-control mb-2" placeholder="Digite seu e-mail">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+                <p id="mensagem" class="mt-2"></p>
+         
+            <script>
+                function validarFormulario() {
+                    let nome = document.getElementById("nome").value;
+                    let email = document.getElementById("email").value;
+
+                    if (nome === "" || email === "") {
+                        document.getElementById("mensagem").innerText = "Preencha todos os campos!";
+                        return false; // Impede o envio do formulário
+                    }
+                    document.getElementById("mensagem").innerText = "Formulário enviado com sucesso!";
+                    return true; // Permite o envio
+                }
+            </script>
+ </div>
+ <hr>
+ <pre class="bg-light p-3 rounded">
+ &lt;div class=&quot;bg-light p-3 rounded&quot;&gt;
+    
+ &lt;form onsubmit=&quot;return validarFormulario()&quot;&gt;
+     &lt;input type=&quot;text&quot; id=&quot;nome&quot; class=&quot;form-control mb-2&quot; placeholder=&quot;Digite seu nome&quot;&gt;
+     &lt;input type=&quot;email&quot; id=&quot;email&quot; class=&quot;form-control mb-2&quot; placeholder=&quot;Digite seu e-mail&quot;&gt;
+     &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;Enviar&lt;/button&gt;
+ &lt;/form&gt;
+ &lt;p id=&quot;mensagem&quot; class=&quot;mt-2&quot;&gt;&lt;/p&gt;
+
+ &lt;script&gt;
+     function validarFormulario() {
+         let nome = document.getElementById(&quot;nome&quot;).value;
+         let email = document.getElementById(&quot;email&quot;).value;
+
+         if (nome === &quot;&quot; || email === &quot;&quot;) {
+             document.getElementById(&quot;mensagem&quot;).innerText = &quot;Preencha todos os campos!&quot;;
+             return false; // Impede o envio do formulário
+         }
+         document.getElementById(&quot;mensagem&quot;).innerText = &quot;Formulário enviado com sucesso!&quot;;
+         return true; // Permite o envio
+     }
+ &lt;/script&gt;
+
+&lt;/div&gt;
+    </pre>
+
+
+            <h3>📌 Como funciona?</h3>
+            <ul>
+                <li>Quando o botão de envio é pressionado, a função <b>validarFormulario()</b> é chamada.</li>
+                <li>Se algum campo estiver vazio, uma mensagem de erro aparece e o envio é impedido (<b>return false</b>).</li>
+                <li>Se os campos estiverem preenchidos, o formulário é enviado e uma mensagem de sucesso aparece.</li>
+            </ul>
+
+            <hr>
+
+
+            <!-- Exercício 1 -->
+            <h4>1️⃣ Exercício: Clique no Botão</h4>
+            <strong>📌 Tarefa:</strong>
+            ✅ Crie um botão que, ao ser clicado, altere a cor de fundo da página.
+            <p><b> Dica:</b> Use <b> document.body.style.backgroundColor.</b></p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEx1" aria-expanded="false" aria-controls="collapseEx2">Mostrar Resposta</button>
+            <div class="collapse" id="collapseEx1">
+                <div class="card card-body">
+                    <pre class="bg-light p-3 rounded">
+                        <div class="d-flex justify-content-center">
+                        <button onclick="document.body.style.backgroundColor = getRandomColor()">Mudar Cor</button>
+
+                        <script>
+                            function getRandomColor() {
+                                const letras = "0123456789ABCDEF";
+                                let cor = "#";
+                                for (let i = 0; i < 6; i++) {
+                                    cor += letras[Math.floor(Math.random() * 16)];
+                                }
+                                return cor;
+                            }
+                        </script>
+                        
+                    </pre>
+                </div>
+            </div>
+            <hr>
+    
+ 
+
+            <!-- Exercício 2 -->
+            <h4>2️⃣ Exercício: Capturando Teclas</h4>
+            <strong>📌 Tarefa:</strong> 
+            ✅ Crie um campo de texto que exiba, em tempo real, o que o usuário está digitando.
+            <p><b> Dica:</b> Use <b class="bg-light p-1rounded" >o evento input ou keydown.</b></p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEx2" aria-expanded="false" aria-controls="collapseEx2">Mostrar Resposta</button>
+            <div class="collapse" id="collapseEx2">
+                <div class="card card-body">
+                    <pre class="bg-light p-3 rounded">
+<div class="d-flex justify-content-center">
+    <div class="d-flex flex-column align-items-center">
+        <input type="text" id="campoDigitacao" class="mb-3" placeholder="Digite algo...">
+        <div class="alert alert-info" id="textoDigitado">
+            O texto digitado aparecerá aqui...
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("campoDigitacao").addEventListener("input", function(event) {
+            document.getElementById("textoDigitado").innerText = event.target.value;
+        });
+    </script>
+    
+
+                    </pre>
+                </div>
+            </div>
+            <hr>
+<!-- Exercício 2 -->
+<h4>3️⃣ Exercício: Validação de Formulário</h4>
+<strong>📌 Tarefa:</strong> 
+✅ Crie um formulário com um campo de senha.
+✅ Se a senha tiver menos de 6 caracteres, exiba um aviso.
+<p><b> Dica:</b> Use <b class="bg-light p-1rounded" >.length</b>para contar os caracteres.</p>
+<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEx3" aria-expanded="false" aria-controls="collapseEx2">Mostrar Resposta</button>
+<div class="collapse" id="collapseEx3">
+    <div class="card card-body">
+        <pre class="bg-light p-3 rounded">
+<div class="d-flex justify-content-center">
+<form onsubmit="return validarSenha()">
+    <input type="password" id="senha" class="form-control mb-2" placeholder="Digite sua senha">
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+<p id="mensagemSenha" class="mt-2"></p>
+
+<script>
+    function validarSenha() {
+        let senha = document.getElementById("senha").value;
+
+        if (senha.length < 6) {
+            document.getElementById("mensagemSenha").innerText = "A senha deve ter pelo menos 6 caracteres!";
+            return false; // Impede o envio do formulário
+        }
+        document.getElementById("mensagemSenha").innerText = "Senha válida!";
+        return true; // Permite o envio
+    }
+</script>
+        </pre>
+    </div>
+</div>
+    
+            <hr>
+            <!-- Navegação -->
+            
+            <div class="navigation d-flex justify-content-between">
+                <button class="btn btn-primary">
+                    <a href="9_manipulação_de_html_com_javaScript.html" class="text-white text-decoration-none">Voltar</a>
+                </button>
+                <button class="btn btn-primary">
+                    <a href="11_ poo_js.html" class="text-white text-decoration-none">Próximo módulo 11</a>
+                </button>
+        </div>
+    </div>
+</body>
+</html>
+    
+

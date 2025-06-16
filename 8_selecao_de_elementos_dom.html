@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset ="UTF-8">
+        <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+      <script src="js/bootstrap.min.js"></script>
+        <title>Seleção de Elementos no DOM</title>
+        </head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow p-4">
+            <header class="card shadow p-4 text-center">
+                <h1 class="text-primary">8. Seleção de Elementos no DOM</h1>
+            </header>
+
+            <hr>
+
+            <p>Para manipular elementos no HTML com JavaScript, primeiro precisamos<b> selecioná-los.</b> Existem diferentes formas de fazer isso.</p>
+            
+            <hr>
+
+            <h5>1️⃣ Seleção por ID (getElementById):</h5>
+
+            <p>Se um elemento tem um <b class="bg-light p-1 rounded">id</b> , podemos selecioná-lo com o método <b class="bg-light p-1 rounded">getElementById</b>.</p>
+       
+                <pre class="bg-light p-3 rounded">
+            id="titulo">Olá, mundo!
+            id="meuBotao">Clique Aqui
+                </pre>
+                <pre class="bg-light p-3 rounded">
+         let titulo = document.getElementById("titulo");
+        onsole.log(titulo.innerText); // Exibe "Olá, mundo!
+            </pre>
+            <p>💡 Importante: getElementById() só retorna um único elemento, pois id é único na página</p>
+            
+            <hr>
+
+            <h5>2️⃣ Seleção por Seletor CSS  <b>(querySelector e querySelectorAll):</b> </h5>
+            <p>💡 Podemos selecionar elementos usando seletor CSS, como<b class="bg-light p-1 rounded"> #id, .classe, tag.</b></p>
+            
+            <pre class="bg-light p-3 rounded">
+                <p class="texto">Primeiro parágrafo</p>
+                <p class="texto">Segundo parágrafo</p>
+                
+            </pre>
+            <pre class="bg-light p-3 rounded">
+// Seleciona apenas o primeiro elemento que encontrar
+let paragrafo = document.querySelector(".texto");
+console.log(paragrafo.innerText);
+
+// Seleciona todos os elementos com a classe 'texto'
+let paragrafos = document.querySelectorAll(".texto");
+
+// Exibe todos os parágrafos encontrados
+paragrafos.forEach(p => console.log(p.innerText));  
+            </pre>
+            
+            <h3>💡 Dica:</h3>
+                <ul>
+                    <li><b class="bg-light p-1 rounded"> querySelector()</b> retorna apenas o primeiro elemento encontrado.a</li>
+                    <li><b class="bg-light p-1 rounded"> querySelectorAll()</b> etorna <b>todos os elementos</b> em um <b class="bg-light p-1 rounded"> NodeList</b> (parecido com um array).</li>
+                    
+                </ul>
+            <hr>
+
+            <h2>🎯 Exercício Prático</h2>
+            <p>Agora, tente resolver este desafio!</p>
+            <p><strong>📌 Tarefa:</strong></p>
+
+            <h6> Crie um HTML no seu Editor de códigos:</h6>
+
+            <ul>
+                <li>✅  um botão e vários parágrafos.</li>
+                <li>✅ Quando clicar no botão, mude o texto do primeiro parágrafo.</li>
+            </ul>
+
+            <hr>
+
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample1" aria-expanded="false" aria-controls="collapseWidthExample">Mostrar Resposta</button>
+            <div style="min-height:15px">
+                <div class="collapse collapse-vertical" id="collapseWidthExample1">
+                    <div class="card card-body" style="width: 650px;">
+                        <pre class="bg-light p-4 rounded">
+                            <div class="mb-3">
+
+                                <div class="card p-4 shadow">
+                                    <p id="meuTexto" class="lead">Este é o primeiro parágrafo.</p>
+                                    <p>Este é o segundo parágrafo.</p>
+                                    <p>Este é o terceiro parágrafo.</p>
+                            
+                                    <button id="meuBotao" class="btn btn-primary mt-3">Alterar Texto</button>
+                                </div>
+                            
+                                <!-- Script do JavaScript (deve estar no final do body) -->
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function() {
+                                        // Seleciona o botão pelo ID
+                                        let botao = document.getElementById("meuBotao");
+                            
+                                        // Adiciona um evento de clique
+                                        botao.addEventListener("click", function() {
+                                            // Seleciona o primeiro parágrafo pelo ID
+                                            let primeiroParagrafo = document.getElementById("meuTexto");
+                                            // Modifica o texto do parágrafo
+                                            primeiroParagrafo.innerText = "Tarefa concluída!";
+                                        });
+                                    });
+                                </script>
+                                
+                            
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="navigation d-flex justify-content-between">
+                <button class="btn btn-primary">
+                    <a href="7_manipulacao_dom_eventos .html" class="text-white text-decoration-none">Voltar</a>
+                </button>
+                <button class="btn btn-primary">
+                    <a href="9_manipulacao_de_html_com_javaScript.html" class="text-white text-decoration-none">Próximo módulo 9</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+    
+

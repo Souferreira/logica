@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+      <script src="js/bootstrap.min.js"></script>
+      <link href="css/main.css" rel="stylesheet">
+    <title>Estruturas Condicionais em JavaScript</title>
+</head>
+<body>
+
+   <div class="container mt-5">
+      <div class="card shadow p-4">
+        <header class="card shadow p-4 text-center">
+            <h1 class="text-primary">3. Estruturas Condicionais em JavaScript</h1>
+        </header>
+
+        <hr>
+
+        <div id="intro" class="mb-4">
+            <p>
+                As estruturas condicionais permitem que você tome decisões no código com base em uma condição. 
+                Em JavaScript, a principal estrutura condicional é o <code>if</code>.
+            </p>
+        </div>
+
+        <div id="if-structure" class="mb-4">
+            <h2>Estrutura <code>if</code> (Condicional)</h2>
+            <p>
+                A estrutura <code>if</code> verifica se uma condição é verdadeira. Se for, o código dentro do bloco <code>{}</code> será executado.
+            </p>
+            <pre class="bg-light p-4">
+<code>
+let idade = 18;
+
+if (idade >= 18) {
+    console.log("Você é maior de idade.");
+} else {
+    console.log("Você é menor de idade.");
+}
+</code>
+            </pre>
+            <p>
+                <strong>Explicação:</strong><br>
+                Se a condição <code>idade >= 18</code> for verdadeira, será exibido "Você é maior de idade.".<br>
+                Se for falsa, a mensagem "Você é menor de idade." será exibida.
+            </p>
+        </div>
+
+        <div id="else-if-structure" class="mb-4">
+            <h2>Estrutura <code>else if</code> (Caso haja várias condições)</h2>
+            <p>
+                Você também pode usar <code>else if</code> para verificar várias condições diferentes.
+            </p>
+            <pre class="bg-light p-4">
+
+let temperatura = 25;
+
+if (temperatura > 30) {
+    console.log("Está muito quente!");
+} else if (temperatura > 20) {
+    console.log("Está agradável.");
+} else {
+    console.log("Está frio.");
+}
+            </pre>
+        </div>
+
+        <div id="exercise" class="mb-4">
+            <h3>🎯 Exercício 1: Estrutura condicionais</h3>
+            <p><strong>📌 Tarefa:</strong></p>
+            <ol>
+                <li>Crie uma variável <code>numero1</code> e atribua um valor numérico.</li>
+                <li>Crie uma variável <code>numero2</code> e atribua outro valor numérico.</li>
+                <li>Some os dois números e exiba o resultado no <code>console.log()</code>.</li>
+                <li>
+                    Crie uma condição <code>if</code> para verificar se a soma dos dois números é maior que 10. 
+                    Se for, exiba "A soma é maior que 10". Caso contrário, exiba "A soma é menor ou igual a 10".
+                </li>
+                <li>
+                    Use o operador <code>%</code> para calcular o resto da divisão entre <code>numero1</code> e <code>numero2</code> 
+                    e exiba o resultado.
+                </li>
+            </ol>
+
+        </div>
+
+    
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">Mostrar Resposta
+        </button>
+            <div style="min-height:15px">
+              <div class="collapse collapse-verti" id="collapseWidthExample">
+                <div class="card card-body" style="width: 650px;">
+                  <pre class="bg-light p-4 rounded">
+                let numero1 = 5;
+                let numero2 = 3;
+                let soma = numero1 + numero2;
+                    console.log(soma);
+
+                    if (soma > 10) {
+                    console.log("A soma é maior que 10");
+                    } else {
+                    console.log("A soma é menor ou igual a 10");
+                    }
+                    
+                   let resto = numero1 % numero2;
+                    console.log(resto);
+
+</div>
+                </pre>
+            
+                </div>
+               </div>
+
+               <hr>
+       
+               <div class="navigation d-flex justify-content-between">
+                <button class="btn btn-primary">
+                    <a href="2_operadores_matematicos.html" class="text-white text-decoration-none">Voltar</a>
+                    </button>
+                <button class="btn btn-primary">
+                <a href="4_variaveis_dado_op_matematico..html" class="text-white text-decoration-none">Proximo modulo 4</a>
+            </div>
+ </div>
+</body>
+</html>

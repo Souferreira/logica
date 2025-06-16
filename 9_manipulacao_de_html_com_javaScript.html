@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
+    <title>Seleção de Elementos no DOM</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow p-4">
+            <header class="card shadow p-4 text-center">
+                <h1 class="text-primary">9. Manipulação de HTML e CSS com JavaScript</h1>
+            </header>
+            <hr>
+
+            <!-- Introdução -->
+            <p>Podemos modificar elementos HTML utilizando <b>JavaScript</b> através de métodos como:</p>
+            <table class="table table-bordered mt-4">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Método</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>innerText</code></td>
+                        <td>Altera o texto de um elemento.</td>
+                    </tr>
+                    <tr>
+                        <td><code>innerHTML</code></td>
+                        <td>Modifica o conteúdo HTML interno de um elemento.</td>
+                    </tr>
+                    <tr>
+                        <td><code>value</code></td>
+                        <td>Altera o valor de inputs e formulários.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Exemplo Prático: Alterando o Texto de um Parágrafo -->
+            <h5>🔹 Exemplo Prático: Alterando o Texto de um Parágrafo</h5>
+            <div class="bg-light p-3 rounded text-center">
+              
+                <h1 id="titulo">Texto Original</h1>
+                <button onclick="alterarTexto()">Alterar Texto</button>
+                <script>
+                    function alterarTexto() {
+                        document.getElementById("titulo").innerText = "Texto Alterado com Sucesso!";
+                    }
+                </script>
+            </div>
+   <hr>
+            <pre class="bg-light p-3 rounded">
+&lt;h1 id="titulo"&gt;Texto Original&lt;/h1&gt;
+&lt;button onclick="alterarTexto()"&gt;Alterar Texto&lt;/button&gt;
+
+&lt;script&gt;
+    function alterarTexto() {
+        document.getElementById("titulo").innerText = "Texto Alterado com Sucesso!";
+    }
+&lt;/script&gt;
+            </pre>
+
+            <!-- Explicação -->
+            <h3>📌 Como funciona?</h3>
+            <ul>
+                <li>O título <code>&lt;h1&gt;</code> começa com o texto <b>"Texto Original"</b>.</li>
+                <li>Ao clicar no botão, a função <b>alterarTexto()</b> é acionada.</li>
+                <li>O método <b>innerText</b> altera o conteúdo do <code>&lt;h1&gt;</code> para <b>"Texto Alterado com Sucesso!"</b>.</li>
+            </ul>
+            <hr>
+
+            <!-- Manipulação de CSS -->
+            <h5>2. Manipulação de CSS com JavaScript</h5>
+            <p>Podemos alterar estilos CSS de elementos HTML dinamicamente usando JavaScript. Isso pode ser feito com:</p>
+            <table class="table table-bordered mt-4">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Método</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>style.property</code></td>
+                        <td>Altera propriedades CSS de um elemento diretamente.</td>
+                    </tr>
+                    <tr>
+                        <td><code>classList.add()</code></td>
+                        <td>Adiciona uma classe CSS ao elemento.</td>
+                    </tr>
+                    <tr>
+                        <td><code>classList.remove()</code></td>
+                        <td>Remove uma classe CSS do elemento.</td>
+                    </tr>
+                    <tr>
+                        <td><code>classList.toggle()</code></td>
+                        <td>Alterna entre adicionar e remover uma classe.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Exemplo Prático: Mudando a Cor de Fundo -->
+            <h5>🔹 Exemplo Prático: Mudando a Cor de Fundo</h5>
+            <div class="bg-light p-3 rounded text-center">
+                <style>
+                    .novoEstilo {
+                        background-color: blue;
+                        color: white;
+                        padding: 20px;
+                    }
+                </style>
+                <h1 id="meuTitulo">Mudar a cor</h1>
+                <button onclick="mudarEstilo()">Clique aqui</button>
+                <script>
+                    function mudarEstilo() {
+                        let titulo = document.getElementById("meuTitulo");
+                        titulo.classList.toggle("novoEstilo");
+                    }
+                </script>
+            </div>
+<hr>
+            <pre class="bg-light p-3 rounded">
+&lt;style&gt;
+    .novoEstilo {
+        background-color: blue;
+        color: white;
+        padding: 20px;
+    }
+&lt;/style&gt;
+
+&lt;h1 id="meuTitulo"&gt;Mudar a cor&lt;/h1&gt;
+&lt;button onclick="mudarEstilo()"&gt;Mudar Estilo&lt;/button&gt;
+
+&lt;script&gt;
+    function mudarEstilo() {
+        let titulo = document.getElementById("meuTitulo");
+        titulo.classList.toggle("novoEstilo");
+    }
+&lt;/script&gt;
+            </pre>
+
+            <!-- Explicação -->
+            <h3>📌 Como funciona?</h3>
+            <ul>
+                <li>Criamos um estilo CSS chamado <b>.novoEstilo</b>, que altera a cor do fundo e do texto.</li>
+                <li>Quando o botão é clicado, a função <b>mudarEstilo()</b> usa <b>classList.toggle("novoEstilo")</b> para alternar a classe no <code>&lt;h1&gt;</code>.</li>
+                <li>Isso ativa e desativa o novo estilo a cada clique!</li>
+            </ul>
+            <hr>
+
+            <!-- Exercícios -->
+            <h2>📌 Exercícios Práticos</h2>
+
+            <!-- Exercício 1 -->
+            <h4>1️⃣ Exercício: Alterando o Conteúdo de um Parágrafo</h4>
+            <strong>📌 Tarefa:</strong> 
+            ✅ Crie um botão que, ao ser clicado, altere o texto de um parágrafo.
+             <p><b> Dica:</b> Use <b class="bg-light p-1rounded" >innerText.</b></p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEx1" aria-expanded="false" aria-controls="collapseEx1">Mostrar Resposta</button>
+            <div class="collapse" id="collapseEx1">
+                <div class="card card-body">
+                    <pre class="bg-light p-3 rounded">
+                        <div class="d-flex justify-content-center"></div>
+<p id="meuParagrafo">Texto original do parágrafo.</p>
+<button onclick="alterarParagrafo()">Clique Aqui</button>
+
+<script>
+    function alterarParagrafo() {
+        document.getElementById("meuParagrafo").innerText = "Texto alterado com sucesso!";
+    }
+</script>
+                    </pre>
+                </div>
+            </div>
+            <hr>
+
+            <!-- Exercício 2 -->
+            <h4>2️⃣ Exercício: Mudando a Cor de um Botão</h4>
+            <strong>📌 Tarefa:</strong> 
+            ✅ Crie um botão que, ao ser clicado, altere sua própria cor.
+            <p><b> Dica:</b> Use <b class="bg-light p-1rounded" >style.backgroundColor.</b></p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEx2" aria-expanded="false" aria-controls="collapseEx2">Mostrar Resposta</button>
+            <div class="collapse" id="collapseEx2">
+                <div class="card card-body">
+                    <pre class="bg-light p-3 rounded">
+<div class="d-flex justify-content-center">
+    <button id="meuBotao" class="btn btn-outline-primary" onclick="mudarCor()">Clique Aqui e mude a cor do botao</button>
+</div>
+
+<script>
+    function mudarCor() {
+        let botao = document.getElementById("meuBotao");
+        botao.style.backgroundColor = botao.style.backgroundColor === "red" ? "blue" : "red";
+    }
+</script>
+                    </pre>
+                </div>
+            </div>
+            <hr>
+            <h4>3️⃣ Exercício: Alternando um tema da pagina</h4>
+            <strong>📌 Tarefa:</strong> 
+            ✅ Crie um botão que ative um "modo escuro" na página.
+            <p><b> Dica:</b>Use <b class="bg-light p-1rounded">classList.toggle().</b></p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEx3" aria-expanded="false" aria-controls="collapseEx2">Mostrar Resposta</button>
+            <div class="collapse" id="collapseEx3">
+                <div class="card card-body">
+                    <pre class="bg-light p-3 rounded">
+<div class="d-flex justify-content-center">
+    <style>
+        .modo-escuro {
+            background-color: #000000;
+            color: #000000;
+        }
+    </style>
+    <button id="modoEscuroBotao" class="btn btn-outline-primary" onclick="alternarModoEscuro()">Ativar Modo Escuro</button>
+</div>
+
+<script>
+    function alternarModoEscuro() {
+        document.body.classList.toggle("modo-escuro");
+        let botao = document.getElementById("modoEscuroBotao");
+        botao.innerText = document.body.classList.contains("modo-escuro") ? "Desativar Modo Escuro" : "Ativar Modo Escuro";
+    }
+</script>
+
+                    </pre>
+                </div>
+            </div>
+            <hr>
+            <!-- Navegação -->
+            
+            <div class="navigation d-flex justify-content-between">
+                <button class="btn btn-primary">
+                    <a href="8_selecao_de_elementos_dom.html" class="text-white text-decoration-none">Voltar</a>
+                </button>
+                <button class="btn btn-primary">
+                    <a href="10_eventos_e_formularios_no_javaScript .html" class="text-white text-decoration-none">Próximo módulo 10</a>
+                </button>
+        </div>
+    </div>
+</body>
+</html>
+    
+
